@@ -42,7 +42,7 @@
 
 .form__label {
   width: 330px;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Titulos";
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
@@ -53,7 +53,7 @@
 .form__input {
   width: 358px;
   border: none;
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Subtitulos";
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
@@ -71,7 +71,7 @@
   margin-bottom: 29px;
 }
 .popup__add-btn {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: "Subtitulos";
   font-weight: 400;
   font-size: 14px;
   line-height: 17px;
