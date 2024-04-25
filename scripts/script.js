@@ -5,10 +5,10 @@ const button3 = document.querySelector("#profile");
 const button4 = document.querySelector("#add");
 const profileName = document.querySelector("#name");
 const profileAbout = document.querySelector("#about");
-const popupProfile = document.querySelector(".popup__content_profile");
+const popupProfile = document.querySelector(".popup-content-profile");
 const nameProfile = document.querySelector(".nav__profile-nombre");
 const aboutProfie = document.querySelector(".nav__profile-about");
-const popupAddCard = document.querySelector(".popup__content_add-card");
+const popupAddCard = document.querySelector(".popup-content-add-card");
 let formElement = document.querySelector("#form__edit");
 
 // Eventos
