@@ -39,6 +39,7 @@
   border-bottom-right-radius: 10px;
 }
 .element__title {
+  width: 246px;
   font-family: "Titulos";
   font-weight: 900;
   font-size: 24px;
