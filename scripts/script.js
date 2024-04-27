@@ -1,8 +1,8 @@
 //Variables
-const buttonopeneditprofile = document.querySelector("#btnedit");
-const buttonopenaddcard = document.querySelector("#btnadd");
-const buttoncloseeditprofile = document.querySelector("#profile");
-const buttoncloseaddcard = document.querySelector("#add");
+const buttonOpenEditProfile = document.querySelector("#btnedit");
+const buttonOpenAddCard = document.querySelector("#btnadd");
+const buttonCloseEditProfile = document.querySelector("#profile");
+const buttonCloseAddCard = document.querySelector("#add");
 const profileName = document.querySelector("#name");
 const profileAbout = document.querySelector("#about");
 const popupProfile = document.querySelector(".popup-content-profile");
@@ -12,10 +12,10 @@ const popupAddCard = document.querySelector(".popup-content-add-card");
 let formElement = document.querySelector("#form__edit");
 
 // Eventos
-buttonopeneditprofile.addEventListener("click", popup__open_edit);
-buttonopenaddcard.addEventListener("click", popup__open_add);
-buttoncloseeditprofile.addEventListener("click", popup__close_profile);
-buttoncloseaddcard.addEventListener("click", popup__close_add);
+buttonOpenEditProfile.addEventListener("click", popup__open_edit);
+buttonOpenAddCard.addEventListener("click", popup__open_add);
+buttonCloseEditProfile.addEventListener("click", popup__close_profile);
+buttonCloseAddCard.addEventListener("click", popup__close_add);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
 //Funciones
