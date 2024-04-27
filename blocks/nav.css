@@ -53,7 +53,7 @@
   overflow: hidden;
 }
 
-.nav__button-edit_box {
+.nav__button-edit {
   width: 24px;
   height: 24px;
   background-color: #000;
@@ -61,16 +61,16 @@
   border: 1px solid #fff;
   margin: 19px 0 34px;
 }
-.nav__button-edit_box:hover {
+.nav__button-edit:hover {
   opacity: 60%;
 }
-.nav__button-edit_imagen {
+.nav__edit-button {
   width: 10px;
   height: 10px;
   margin: 7px;
 }
 
-.nav__button-add_box {
+.nav__button-add {
   width: 150px;
   height: 50px;
   background-color: #000;
@@ -78,10 +78,10 @@
   border: 1px solid #fff;
   margin: 35px 0;
 }
-.nav__button-add_box:hover {
+.nav__button-add:hover {
   opacity: 60%;
 }
-.nav__button-add_imagen {
+.nav__add-button {
   width: 22px;
   height: 22px;
   margin: 14px 64px;
@@ -129,21 +129,21 @@
     align-items: center;
     padding: 0;
   }
-  .nav__button-add_box {
+  .nav__button-add {
     width: 282px;
     margin: auto;
   }
-  .nav__button-add_imagen {
+  .nav__add-button {
     width: 16px;
     height: 16px;
     margin: 17px 133px;
   }
-  .nav__button-edit_box {
+  .nav__button-edit {
     width: 18px;
     height: 18px;
     margin: auto 0;
   }
-  .nav__button-edit_imagen {
+  .nav__edit-button {
     width: 10px;
     height: 10px;
     margin: 4px;

@@ -10,4 +10,4 @@ Metodologia BEM divide la interfaz de usuario en bloques independientes para cre
 Tinypng es un servicio en línea que se utiliza para comprimir imágenes, reduciendo su tamaño de archivo sin comprometer significativamente la calidad visual.
 Javascript es un lenguaje de programacion que te permite implementar funciones mas complejas en paginas web.
 
-https://github.com/JorgeMarcalaya/web_project_around.git
+https://jorgemarcalaya.github.io/web_project_around/
