@@ -1,6 +1,6 @@
 # Tripleten web_project_around
 
-El proyecto esta desarrollado en html 5 y css, diseñado en 3 dimensiones estandar 1280px,880px y 320px totalmente responsiva. La pagina consta de un blog de fotos de lugares muy conocidos de un usuario. En funcionalidad el usuario puedo editar campos como nombre e descripcion mediante popus que cuentan con un formulario totalmente centrado y fijado. Tambien puedo cerrar los popus.  
+El proyecto esta desarrollado en html 5 y css, diseñado en 3 dimensiones estandar 1280px,880px y 320px totalmente responsiva. La pagina consta de un blog de fotos de lugares muy conocidos de un usuario. En funcionalidad el usuario puedo editar campos como nombre e descripcion mediante popus que cuentan con un formulario totalmente centrado y fijado. Tambien puedo cerrar los popus. Se actualizo con cambios sobre el agregar tarjetas con información registrada por el usuario, permite eliminar las tarjetas y la nueva funcionalidad dar like a cada tarjeta.
 
 Tecnicas y Tecnologias utilizadas:
 Figma una herramienta donde nos enseñan como se debe distribuir la pagina web y sus elementos. Cuenta con version online y en escritorio.

@@ -32,7 +32,11 @@
   color: #000;
   border-radius: 10px;
 }
-
+.popup__content-imagen {
+  margin: 0;
+  padding: 0;
+  width: 433px;
+}
 .form {
   display: flex;
   flex-direction: column;
@@ -97,6 +101,19 @@
   width: 40.7px;
   height: 40.7px;
 }
+.popup__body-imagen {
+  width: 430px;
+  height: 540px;
+  margin-top: -46px;
+}
+.popup__body-title {
+  width: 291px;
+  font-family: "Subtitulos";
+  color: #fff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+}
 
 @media screen and (max-width: 880px) and (min-width: 320px) {
   .popup__content {
@@ -137,5 +154,21 @@
   .popup__close-icon {
     width: 26px;
     height: 26px;
+  }
+  .popup__content-imagen {
+    width: 240px;
+  }
+  .popup__body-imagen {
+    width: 240px;
+    height: 299px;
+    margin-top: -46px;
+  }
+  .popup__body-title {
+    width: 240px;
+    font-family: "Subtitulos";
+    color: #fff;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 15px;
   }
 }

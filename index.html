@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <div class="popup popup-content-add-card">
+    <div class="popup popup-content-add-card" id="popup-content-add-card">
       <div class="popup__overlay"></div>
       <div class="popup__content">
         <a class="popup__close-btn" id="add"
@@ -51,16 +51,35 @@
         <div class="popup__body">
           <form class="form" id="form__add">
             <label class="form__label">Nuevo lugar</label>
-            <input type="text" class="form__input" placeholder="Título" /><span
-              class="form__line"
-            ></span>
+            <input
+              type="text"
+              class="form__input"
+              placeholder="Título"
+              id="place"
+            /><span class="form__line"></span>
             <input
               type="text"
               class="form__input"
               placeholder="Enlace a la imagen"
+              id="link"
             /><span class="form__line"></span>
             <button class="popup__add-btn">Crear</button>
           </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-content-imagen">
+      <div class="popup__overlay"></div>
+      <div class="popup__content-imagen">
+        <a class="popup__close-btn" id="imagen"
+          ><img
+            src="./images/botonclose.png"
+            alt="Boton de cierre"
+            class="popup__close-icon"
+        /></a>
+        <div class="popup__body">
+          <img src="" alt="" class="popup__body-imagen" />
+          <p class="popup__body-title"></p>
         </div>
       </div>
     </div>
@@ -105,7 +124,8 @@
             />
           </a>
         </nav>
-        <section class="elements">
+        <section class="elements"></section>
+        <template class="template-cards">
           <div class="element">
             <a href="#">
               <img
@@ -114,13 +134,11 @@
                 class="element__icon-delete"
               />
             </a>
-            <img
-              src="./images/MacchuPicchu.jpg"
-              alt="Macchu Picchu"
-              class="element__imagen"
-            />
+            <a href="#" class="element__popup-image"
+              ><img src="" alt="" class="element__imagen"
+            /></a>
             <div class="element__description">
-              <h2 class="element__title">Macchu Picchu</h2>
+              <h2 class="element__title"></h2>
               <a href="#">
                 <img
                   src="./images/Megusta.png"
@@ -130,127 +148,7 @@
               </a>
             </div>
           </div>
-          <div class="element">
-            <a href="#">
-              <img
-                src="./images/Trash.png"
-                alt="Boton Eliminar"
-                class="element__icon-delete"
-              />
-            </a>
-            <img
-              src="./images/LagunaHuamantay.jpg"
-              alt="Laguna Huamantay"
-              class="element__imagen"
-            />
-            <div class="element__description">
-              <h2 class="element__title">Laguna Huamantay</h2>
-              <a href="#">
-                <img
-                  src="./images/Megusta.png"
-                  alt="Boton Me gusta"
-                  class="element__icon-like"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="element">
-            <a href="#">
-              <img
-                src="./images/Trash.png"
-                alt="Boton Eliminar"
-                class="element__icon-delete"
-              />
-            </a>
-            <img
-              src="./images/Elhuertodelpozo.jpg"
-              alt="El huerto del pozo"
-              class="element__imagen"
-            />
-            <div class="element__description">
-              <h2 class="element__title">El huerto del pozo</h2>
-              <a href="#">
-                <img
-                  src="./images/Megusta.png"
-                  alt="Boton Me gusta"
-                  class="element__icon-like"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="element">
-            <a href="#">
-              <img
-                src="./images/Trash.png"
-                alt="Boton Eliminar"
-                class="element__icon-delete"
-              />
-            </a>
-            <img
-              src="./images/Montañadelos7colores.jpg"
-              alt="Montaña de los 7 colores"
-              class="element__imagen"
-            />
-            <div class="element__description">
-              <h2 class="element__title">Montaña de los 7 colores</h2>
-              <a href="#">
-                <img
-                  src="./images/Megusta.png"
-                  alt="Boton Me gusta"
-                  class="element__icon-like"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="element">
-            <a href="#">
-              <img
-                src="./images/Trash.png"
-                alt="Boton Eliminar"
-                class="element__icon-delete"
-              />
-            </a>
-            <img
-              src="./images/Laguna69.jpg"
-              alt="Laguna 69"
-              class="element__imagen"
-            />
-            <div class="element__description">
-              <h2 class="element__title">Laguna 69</h2>
-              <a href="#">
-                <img
-                  src="./images/Megusta.png"
-                  alt="Boton Me gusta"
-                  class="element__icon-like"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="element">
-            <a href="#">
-              <img
-                src="./images/Trash.png"
-                alt="Boton Eliminar"
-                class="element__icon-delete"
-              />
-            </a>
-            <img
-              src="./images/Lunahuana.jpg"
-              alt="Lunahuana"
-              class="element__imagen"
-            />
-            <div class="element__description">
-              <h2 class="element__title">Lunahuana</h2>
-              <a href="#">
-                <img
-                  src="./images/Megusta.png"
-                  alt="Boton Me gusta"
-                  class="element__icon-like"
-                />
-              </a>
-            </div>
-          </div>
-        </section>
+        </template>
       </main>
       <footer class="footer">&#169;2020 Jorge</footer>
     </div>
