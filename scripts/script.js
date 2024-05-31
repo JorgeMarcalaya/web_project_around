@@ -14,7 +14,7 @@ let formCard = document.querySelector("#popup-content-add-card");
 const template = document.querySelector(".template-cards");
 const cardArea = document.querySelector(".elements");
 //Cards
-let initialCards = [
+const initialCards = [
   {
     name: "Chicago",
     link: "https://images.unsplash.com/photo-1596250410216-1ac77dc208e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hpY2Fnb3xlbnwwfHwwfHx8MA%3D%3D",

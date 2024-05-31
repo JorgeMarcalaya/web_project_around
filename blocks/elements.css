@@ -2,7 +2,7 @@
   width: 882px;
   display: grid;
   grid-template-columns: repeat(3, 282px);
-  grid-template-rows: repeat(2, 361px);
+  grid-template-rows: repeat(2, auto);
   grid-gap: 18px;
   margin: 0 auto 67px;
 }
@@ -59,7 +59,6 @@
 .element__icon-like {
   width: 21px;
   height: 19px;
-  margin-top: 5px;
 }
 .element__icon-like_active {
   background-image: url("../images/Megustaactivo.png");
