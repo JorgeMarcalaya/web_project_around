@@ -69,6 +69,13 @@
   color: #000;
 }
 
+.form__input:invalid {
+  font-family: "Subtitulos";
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 15px;
+  border-bottom: 1px solid #ff0000;
+}
 .form__line {
   opacity: 0.7;
   border-bottom: 1px solid #c4c4c4;
@@ -91,6 +98,17 @@
 .popup__add-btn:hover {
   opacity: 0.8;
 }
+
+.popup__add-btn_inactive {
+  width: 358px;
+  height: 50.15px;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+  background-color: #fff;
+}
+
 .popup__close-btn {
   position: relative;
   bottom: 40.7px;

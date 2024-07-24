@@ -11,7 +11,7 @@
   </head>
   <body class="body">
     <div class="popup popup-content-profile">
-      <div class="popup__overlay"></div>
+      <div class="popup__overlay" id="overlay-formprofile"></div>
       <div class="popup__content">
         <a class="popup__close-btn" id="profile"
           ><img
@@ -28,6 +28,8 @@
               placeholder="Nombre"
               id="name"
               required
+              minlength="2"
+              maxlength="40"
             /><span class="form__line"></span>
             <input
               type="text"
@@ -35,14 +37,16 @@
               placeholder="Acerca de mi"
               id="about"
               required
+              minlength="2"
+              maxlength="200"
             /><span class="form__line"></span>
-            <button class="popup__add-btn">Guardar</button>
+            <button class="popup__add-btn" type="submit">Guardar</button>
           </form>
         </div>
       </div>
     </div>
     <div class="popup popup-content-add-card" id="popup-content-add-card">
-      <div class="popup__overlay"></div>
+      <div class="popup__overlay" id="overlay-formcard"></div>
       <div class="popup__content">
         <a class="popup__close-btn" id="add"
           ><img
@@ -59,9 +63,11 @@
               placeholder="Título"
               id="place"
               required
+              minlength="2"
+              maxlength="30"
             /><span class="form__line"></span>
             <input
-              type="text"
+              type="url"
               class="form__input"
               placeholder="Enlace a la imagen"
               id="link"
@@ -73,7 +79,7 @@
       </div>
     </div>
     <div class="popup popup-content-imagen">
-      <div class="popup__overlay"></div>
+      <div class="popup__overlay" id="overlay-card"></div>
       <div class="popup__content-imagen">
         <a class="popup__close-btn" id="imagen"
           ><img
@@ -157,5 +163,6 @@
       <footer class="footer">&#169;2020 Jorge</footer>
     </div>
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/validate.js"></script>
   </body>
 </html>
