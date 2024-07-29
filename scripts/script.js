@@ -60,21 +60,11 @@ function popup__open_edit() {
   profileAbout.value = aboutProfie.textContent;
   popupProfile.classList.add("popup__opened");
   document.addEventListener("keydown", keyEscCloseFormProfile);
-  forms.forEach(function (form) {
-    const inputList = Array.from(form.querySelectorAll(".form__input"));
-    const buttonElement = form.querySelector(".popup__add-btn");
-
-    inputList.forEach(function (inputElement) {
-      inputElement.addEventListener("input", function () {
-        toggleButtonState(inputList, buttonElement);
-      });
-    });
-    toggleButtonState(inputList, buttonElement);
-  });
+  enableValidation();
 }
 function popup__open_add() {
   popupAddCard.classList.add("popup__opened");
-  toggleButtonState(inputList, buttonElement);
+  enableValidation();
   document.addEventListener("keydown", keyEscCloseFormCard);
 }
 function popup__close_profile() {

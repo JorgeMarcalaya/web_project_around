@@ -1,4 +1,3 @@
-const forms = document.querySelectorAll(".form");
 let inputList = [];
 let buttonElement;
 
@@ -16,14 +15,17 @@ function toggleButtonState(inputList, buttonElement) {
     buttonElement.disabled = false;
   }
 }
+function enableValidation() {
+  const forms = document.querySelectorAll(".form");
+  forms.forEach(function (form) {
+    inputList = Array.from(form.querySelectorAll(".form__input"));
+    buttonElement = form.querySelector(".popup__add-btn");
 
-forms.forEach(function (form) {
-  inputList = Array.from(form.querySelectorAll(".form__input"));
-  buttonElement = form.querySelector(".popup__add-btn");
-
-  inputList.forEach(function (inputElement) {
-    inputElement.addEventListener("input", function () {
-      toggleButtonState(inputList, buttonElement);
+    inputList.forEach(function (inputElement) {
+      inputElement.addEventListener("input", function () {
+        toggleButtonState(inputList, buttonElement);
+      });
     });
+    toggleButtonState(inputList, buttonElement);
   });
-});
+}
