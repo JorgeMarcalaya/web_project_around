@@ -1,8 +1,9 @@
 export class Card {
-  constructor(data, cardSelector) {
+  constructor(data, cardSelector, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._cardSelector = cardSelector;
+    this._handleCardClick = handleCardClick;
   }
   _getTemplate() {
     const cardElement = document
@@ -35,33 +36,9 @@ export class Card {
     this._element
       .querySelector(".element__popup-image")
       .addEventListener("click", () => {
-        const popup = document.querySelector(".popup-content-imagen");
-        // Funcion asingar info al popup
-        const popupImagen = popup.querySelector(".popup__body-imagen");
-        const popupTitle = popup.querySelector(".popup__body-title");
-        const btnImagenClose = popup.querySelector("#imagen");
-        const overlayCard = document.querySelector("#overlay-card");
-        popupImagen.src = this._link;
-        popupTitle.textContent = this._name;
-        popupImagen.alt = `Imagen de ${this._name}`;
-        popup.classList.add("popup__opened");
-        btnImagenClose.addEventListener("click", function () {
-          popup.classList.remove("popup__opened");
-        });
-        overlayCard.addEventListener("click", function () {
-          popup.classList.remove("popup__opened");
-        });
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            popup.classList.remove("popup__opened");
-          }
-        });
-        document.removeEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            popup.classList.remove("popup__opened");
-          }
-        });
+        this._handleCardClick(this._link, this._name);
       });
+
     return this._element;
   }
 }

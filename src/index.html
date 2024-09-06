@@ -3,10 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Proyecto 5 Tripleten" />
+    <meta name="description" content="Proyecto Tripleten" />
     <meta name="author" content="Jorge" />
     <meta name="keywords" content="html,css,js" />
-    <link rel="stylesheet" href="./blocks/index.css" />
     <title>Alrededor de los EEUU</title>
   </head>
   <body class="body">
@@ -15,8 +14,9 @@
       <div class="popup__content">
         <a class="popup__close-btn" id="profile"
           ><img
-            src="./images/botonclose.png"
-            alt="Boton de cierre"
+            src="<%= require('./images/botonclose.png')%>"
+            alt="Boton
+          de cierre"
             class="popup__close-icon"
         /></a>
         <div class="popup__body">
@@ -40,7 +40,9 @@
               minlength="2"
               maxlength="200"
             /><span class="form__line"></span>
-            <button class="popup__add-btn" type="submit">Guardar</button>
+            <button class="popup__add-btn" type="submit" id="profilebutton">
+              Guardar
+            </button>
           </form>
         </div>
       </div>
@@ -50,7 +52,7 @@
       <div class="popup__content">
         <a class="popup__close-btn" id="add"
           ><img
-            src="./images/botonclose.png"
+            src="<%= require('./images/botonclose.png')%>"
             alt="Boton de cierre"
             class="popup__close-icon"
         /></a>
@@ -73,7 +75,7 @@
               id="link"
               required
             /><span class="form__line"></span>
-            <button class="popup__add-btn">Crear</button>
+            <button class="popup__add-btn" id="cardbutton">Crear</button>
           </form>
         </div>
       </div>
@@ -83,7 +85,7 @@
       <div class="popup__content-imagen">
         <a class="popup__close-btn" id="imagen"
           ><img
-            src="./images/botonclose.png"
+            src="<%= require('./images/botonclose.png')%>"
             alt="Boton de cierre"
             class="popup__close-icon"
         /></a>
@@ -96,7 +98,7 @@
     <div class="page">
       <header class="header">
         <img
-          src="./images/logo.png"
+          src="<%= require('./images/logo.png')%>"
           alt="Logo del encabezado"
           class="header__logo"
         />
@@ -105,7 +107,7 @@
       <main class="main">
         <nav class="nav">
           <img
-            src="./images/profile.jpg"
+            src="<%= require('./images/profile.jpg')%>"
             alt="Imagen de perfil"
             class="nav__profile-avatar"
           />
@@ -120,7 +122,7 @@
             </ul>
             <a id="btnedit" class="nav__button nav__button-edit">
               <img
-                src="./images/botoneditar.png"
+                src="<%= require('./images/botoneditar.png')%>"
                 alt="Imagen de edicion"
                 class="nav__edit-button"
               />
@@ -128,7 +130,7 @@
           </div>
           <a id="btnadd" class="nav__button nav__button-add">
             <img
-              src="./images/botonañadir.png"
+              src="<%= require('./images/botonañadir.png')%>"
               alt="Imagen de agregar"
               class="nav__add-button"
             />
@@ -139,7 +141,7 @@
           <div class="element">
             <a href="#">
               <img
-                src="./images/Trash.png"
+                src="<%= require('./images/Trash.png')%>"
                 alt="Boton Eliminar"
                 class="element__icon-delete"
               />
@@ -151,7 +153,7 @@
               <h2 class="element__title"></h2>
               <a>
                 <img
-                  src="./images/Megusta.png"
+                  src="<%= require('./images/Megusta.png')%>"
                   alt="Boton Me gusta"
                   class="element__icon-like"
                 />
@@ -162,7 +164,5 @@
       </main>
       <footer class="footer">&#169;2020 Jorge</footer>
     </div>
-    <script type="module" src="./scripts/script.js"></script>
-    <script type="module" src="./scripts/utils.js"></script>
   </body>
 </html>

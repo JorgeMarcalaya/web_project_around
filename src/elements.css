@@ -61,7 +61,7 @@
   height: 19px;
 }
 .element__icon-like_active {
-  background-image: url("../images/Megustaactivo.png");
+  background-image: url("./images/Megustaactivo.png");
   width: 21px;
   height: 19px;
   margin: 0;

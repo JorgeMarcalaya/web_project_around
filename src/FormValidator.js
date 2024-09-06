@@ -1,5 +1,3 @@
-export const form = document.querySelector(".form");
-
 export const forms = {
   inputSelector: ".form__input",
   submitButtonSelector: ".popup__add-btn",
@@ -17,13 +15,11 @@ export class FormValidator {
       this._forms.submitButtonSelector
     );
   }
-  // Metodo privado para verificar si hay inputs invalidos
   _hasInvalidInput() {
     return this._inputList.some((inputElement) => {
       return !inputElement.validity.valid;
     });
   }
-  //Metodo privado para alternar el estado del boton
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._buttonElement.classList.add(this._forms.inactiveButtonClass);
@@ -33,7 +29,6 @@ export class FormValidator {
       this._buttonElement.disabled = false;
     }
   }
-  //Metodo publico para disparar los eventos
   enableValidation() {
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
