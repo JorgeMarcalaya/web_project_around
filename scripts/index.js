@@ -1,5 +1,5 @@
 //Importaciones
-import "./index.css";
+import "../styles/index.css";
 import { Card } from "./Card.js";
 import { Section } from "./Section.js";
 import { PopupWithImage } from "./PopupWithImage.js";
@@ -82,24 +82,21 @@ function handleProfileFormSubmit(evt) {
   popupProfile.classList.remove("popup__opened");
 }
 
-function handleCardFormSubmit() {
-  const placeValue = document.querySelector("#place");
-  const linkValue = document.querySelector("#link");
+function handleCardFormSubmit(formData) {
   initialCards.push({
-    name: placeValue.value,
-    link: linkValue.value,
+    name: formData.place,
+    link: formData.link,
   });
   const newCard = new Card(
     {
-      name: placeValue.value,
-      link: linkValue.value,
+      name: formData.place,
+      link: formData.link,
     },
     ".template-cards",
     handleCardClick
   );
   const cardToAdd = newCard.generateCard();
   cardArea.prepend(cardToAdd);
-  popupAddCard.classList.remove("popup__opened");
 }
 
 function popup__open_edit() {

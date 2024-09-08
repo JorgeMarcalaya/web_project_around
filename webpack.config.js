@@ -6,7 +6,7 @@ module.exports = {
   devtool: "inline-source-map",
   entry: {
     // Describiendo el punto de entrada.
-    main: "./src/index.js",
+    main: "./scripts/index.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
