@@ -27,7 +27,7 @@
   z-index: -1;
 }
 .popup__content {
-  min-height: 330px;
+  min-height: 181px;
   background-color: #fff;
   color: #000;
   border-radius: 10px;

@@ -95,6 +95,64 @@
         </div>
       </div>
     </div>
+    <div class="popup popup-content-eraser">
+      <div class="popup__overlay" id="overlay-formcard"></div>
+      <div class="popup__content">
+        <a class="popup__close-btn" id="add"
+          ><img
+            src="<%= require('./images/botonclose.png')%>"
+            alt="Boton de cierre"
+            class="popup__close-icon"
+        /></a>
+        <div class="popup__body">
+          <form class="form" id="form__add">
+            <label class="form__label">¿Estás seguro?</label>
+            <button class="popup__add-btn" id="trashcard">Si</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-content-eraser">
+      <div class="popup__overlay" id="overlay-formcard"></div>
+      <div class="popup__content">
+        <a class="popup__close-btn" id="add"
+          ><img
+            src="<%= require('./images/botonclose.png')%>"
+            alt="Boton de cierre"
+            class="popup__close-icon"
+        /></a>
+        <div class="popup__body">
+          <form class="form" id="form__add">
+            <label class="form__label">¿Estás seguro?</label>
+            <button class="popup__add-btn" id="trashcard">Si</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="popup popup-content-perfil">
+      <div class="popup__overlay" id="overlay-formcard"></div>
+      <div class="popup__content">
+        <a class="popup__close-btn" id="add"
+          ><img
+            src="<%= require('./images/botonclose.png')%>"
+            alt="Boton de cierre"
+            class="popup__close-icon"
+        /></a>
+        <div class="popup__body">
+          <form class="form" id="form__add">
+            <label class="form__label">Cambiar foto de perfil</label>
+            <input
+              type="url"
+              class="form__input"
+              placeholder="Enlace a la imagen"
+              id="photo"
+              required
+            /><span class="form__line"></span>
+            <button class="popup__add-btn" id="editPhoto">Guardar</button>
+          </form>
+        </div>
+      </div>
+    </div>
     <div class="page">
       <header class="header">
         <img
@@ -106,18 +164,22 @@
       </header>
       <main class="main">
         <nav class="nav">
-          <img
-            src="<%= require('./images/profile.jpg')%>"
-            alt="Imagen de perfil"
-            class="nav__profile-avatar"
-          />
+          <div class="nav__overlay" id="overlay-editprofile"></div>
+          <div class="nav__profile-container">
+            <img src="" alt="Imagen de perfil" class="nav__profile-avatar" />
+            <img
+              src="<%= require('./images/botoneditar.png')%>"
+              alt="Imagen de editar perfil"
+              class="nav__edit-perfil"
+            />
+          </div>
           <div class="nav__profile">
             <ul class="nav__profile-list">
               <li>
-                <h1 class="nav__profile-nombre">Jacques Cousteau</h1>
+                <h1 class="nav__profile-nombre"></h1>
               </li>
               <li>
-                <h2 class="nav__profile-about">Explorador</h2>
+                <h2 class="nav__profile-about"></h2>
               </li>
             </ul>
             <a id="btnedit" class="nav__button nav__button-edit">
@@ -157,11 +219,14 @@
                   alt="Boton Me gusta"
                   class="element__icon-like"
                 />
+                <p class="element__count-like"></p>
               </a>
             </div>
           </div>
         </template>
       </main>
+      <script type="module" src="../scripts/Card.js"></script>
+      <script type="module" src="../scripts/PopupWithConfirmation.js"></script>
       <footer class="footer">&#169;2020 Jorge</footer>
     </div>
   </body>

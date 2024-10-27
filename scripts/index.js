@@ -7,64 +7,83 @@ import { PopupWithForm } from "./PopupWithForm.js";
 import { FormValidator, forms } from "./FormValidator.js";
 import { UserInfo } from "./UserInfo.js";
 import { Popup } from "./Popup.js";
+import { Api } from "./Api.js";
+import { PopupWithConfirmation } from "./PopupWithConfirmation.js";
+
 // Declaracion de Variables
 const buttonOpenEditProfile = document.querySelector("#btnedit");
 const buttonOpenAddCard = document.querySelector("#btnadd");
+const buttonOpenEditPhotoProfile = document.querySelector(".nav__edit-perfil");
+const buttonEditPhoto = document.querySelector("#editPhoto");
 let formElement = document.querySelector("#form__edit");
 let formCard = document.querySelector("#form__add");
 const profileName = document.querySelector("#name");
 const profileAbout = document.querySelector("#about");
+const profilePhoto = document.querySelector("#photo");
 const popupProfile = document.querySelector(".popup-content-profile");
 const nameProfile = document.querySelector(".nav__profile-nombre");
 const aboutProfie = document.querySelector(".nav__profile-about");
+const photoProfile = document.querySelector(".nav__profile-avatar");
 const popupAddCard = document.querySelector(".popup-content-add-card");
+const popupDeleteConfirm = document.querySelector(".popup-content-eraser");
+const popupEditePhotoProfile = document.querySelector(".popup-content-perfil");
 const cardArea = document.querySelector(".elements");
 const contentPopupImagen = document.querySelector(".popup-content-imagen");
-const initialCards = [
-  {
-    name: "Chicago",
-    link: "https://images.unsplash.com/photo-1596250410216-1ac77dc208e3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hpY2Fnb3xlbnwwfHwwfHx8MA%3D%3D",
-  },
-  {
-    name: "New York",
-    link: "https://images.unsplash.com/photo-1541336032412-2048a678540d?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fG51ZXZhJTIweW9ya3xlbnwwfHwwfHx8MA%3D%3D",
-  },
-  {
-    name: "Brooklyn",
-    link: "https://images.unsplash.com/photo-1562809878-e7b278388ab5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGJyb29reWxufGVufDB8fDB8fHww",
-  },
-  {
-    name: "Las Vegas",
-    link: "https://images.unsplash.com/photo-1577334928618-2ff2bf09e827?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bGFzJTIwdmVnYXN8ZW58MHx8MHx8fDA%3D",
-  },
-  {
-    name: "Texas",
-    link: "https://plus.unsplash.com/premium_photo-1690522330262-5bdf16b17e26?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTN8fHRleGFzfGVufDB8fDB8fHww",
-  },
-  {
-    name: "Nebraska",
-    link: "https://images.unsplash.com/photo-1574189937485-b94ae177a5fb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bmVicmFza2F8ZW58MHx8MHx8fDA%3D",
-  },
-];
+const buttonEditProfile = document.querySelector("#profilebutton");
+const buttonNewCard = document.querySelector("#cardbutton");
 const formValidatorPopupEdit = new FormValidator(forms, formElement);
 const formValidatorPopupAdd = new FormValidator(forms, formCard);
 const PopupProfile = new Popup(popupProfile);
 const PopupCard = new Popup(popupAddCard);
+const PopupEditPhotoProfile = new Popup(popupEditePhotoProfile);
 const closePopup = new PopupWithImage(contentPopupImagen);
 const userInfo = new UserInfo(nameProfile, aboutProfie);
 const popupWithImage = new PopupWithImage(contentPopupImagen);
 const submitCard = new PopupWithForm(formCard, handleCardFormSubmit);
-const cardsList = new Section(
-  {
-    items: initialCards,
-    renderer: (cardItem) => {
-      const card = new Card(cardItem, ".template-cards", handleCardClick);
-      const cardNewElement = card.generateCard();
-      cardsList.addItem(cardNewElement);
-    },
+export const PopupDelete = new PopupWithConfirmation(popupDeleteConfirm);
+
+//Ver Perfil mediante el servidor
+
+const apiUser = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_es_10/users/me",
+  headers: {
+    authorization: "aef20d41-9cb3-4569-ba79-0c7f1acf4cae",
+    "Content-Type": "application/json",
   },
-  cardArea
-);
+});
+apiUser.getUserInfo();
+// Ver lista de tarjetas
+
+const apiAvatar = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_es_10/users/me/avatar",
+  headers: {
+    authorization: "aef20d41-9cb3-4569-ba79-0c7f1acf4cae",
+    "Content-Type": "application/json",
+  },
+});
+
+const initialCards = [];
+export const apiCards = new Api({
+  baseUrl: "https://around.nomoreparties.co/v1/web_es_10/cards",
+  headers: {
+    authorization: "aef20d41-9cb3-4569-ba79-0c7f1acf4cae",
+    "Content-Type": "application/json",
+  },
+});
+apiCards.getInitialCards(initialCards, (cards) => {
+  const cardsList = new Section(
+    {
+      items: cards,
+      renderer: (cardItem) => {
+        const card = new Card(cardItem, ".template-cards", handleCardClick);
+        const cardNewElement = card.generateCard();
+        cardsList.addItem(cardNewElement);
+      },
+    },
+    cardArea
+  );
+  cardsList.renderItems();
+});
 
 //Funciones
 function handleCardClick(imagen, title) {
@@ -72,6 +91,7 @@ function handleCardClick(imagen, title) {
 }
 
 function handleProfileFormSubmit(evt) {
+  buttonEditProfile.textContent = "Guardando...";
   evt.preventDefault();
   let setname = profileName.value;
   let setabout = profileAbout.value;
@@ -79,10 +99,21 @@ function handleProfileFormSubmit(evt) {
     name: setname,
     about: setabout,
   });
+  apiUser.editUserInfo();
   popupProfile.classList.remove("popup__opened");
 }
 
+function handleEditPhotoProfileFormSubmit(evt) {
+  buttonEditPhoto.textContent = "Guardando...";
+  evt.preventDefault();
+  let setphoto = profilePhoto.value;
+  photoProfile.src = setphoto;
+  apiAvatar.editPhotoProfile();
+  popupEditePhotoProfile.classList.remove("popup__opened");
+}
+
 function handleCardFormSubmit(formData) {
+  buttonNewCard.textContent = "Creando...";
   initialCards.push({
     name: formData.place,
     link: formData.link,
@@ -95,6 +126,7 @@ function handleCardFormSubmit(formData) {
     ".template-cards",
     handleCardClick
   );
+  apiCards.cardAditional(formData);
   const cardToAdd = newCard.generateCard();
   cardArea.prepend(cardToAdd);
 }
@@ -111,12 +143,26 @@ function popup__open_add() {
 }
 
 //Eventos y lista
-cardsList.renderItems();
 submitCard.setEventListeners();
 PopupProfile.setEventListeners();
 PopupCard.setEventListeners();
 closePopup.setEventListeners();
+PopupDelete.setEventListeners();
+PopupEditPhotoProfile.setEventListeners();
 
 buttonOpenEditProfile.addEventListener("click", popup__open_edit);
 buttonOpenAddCard.addEventListener("click", popup__open_add);
+buttonOpenEditPhotoProfile.addEventListener("click", () => {
+  PopupEditPhotoProfile.open();
+});
 formElement.addEventListener("submit", handleProfileFormSubmit);
+buttonEditPhoto.addEventListener("click", handleEditPhotoProfileFormSubmit);
+fetch("https://around.nomoreparties.co/v1/web_es_10/cards/", {
+  headers: {
+    authorization: "aef20d41-9cb3-4569-ba79-0c7f1acf4cae",
+  },
+})
+  .then((res) => res.json())
+  .then((result) => {
+    console.log(result);
+  });
