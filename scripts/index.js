@@ -114,14 +114,11 @@ function handleEditPhotoProfileFormSubmit(evt) {
 
 function handleCardFormSubmit(formData) {
   buttonNewCard.textContent = "Creando...";
-  initialCards.push({
-    name: formData.place,
-    link: formData.link,
-  });
   const newCard = new Card(
     {
       name: formData.place,
       link: formData.link,
+      iduser: formData.iduser,
     },
     ".template-cards",
     handleCardClick
@@ -157,12 +154,3 @@ buttonOpenEditPhotoProfile.addEventListener("click", () => {
 });
 formElement.addEventListener("submit", handleProfileFormSubmit);
 buttonEditPhoto.addEventListener("click", handleEditPhotoProfileFormSubmit);
-fetch("https://around.nomoreparties.co/v1/web_es_10/cards/", {
-  headers: {
-    authorization: "aef20d41-9cb3-4569-ba79-0c7f1acf4cae",
-  },
-})
-  .then((res) => res.json())
-  .then((result) => {
-    console.log(result);
-  });

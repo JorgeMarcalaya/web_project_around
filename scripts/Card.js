@@ -101,12 +101,7 @@ export class Card {
     this._element.querySelector(
       ".element__imagen"
     ).alt = `Imagen de ${this._name}`;
-    //Button trash active/inactive
-    if (this._idUser !== this._myid) {
-      this._btnTrashInactive();
-    } else {
-      this._btnTrashActive();
-    }
+    this._toogleTrashButton();
     this._viewLikeCount();
     // Buttton like
     this._element
@@ -146,5 +141,13 @@ export class Card {
       });
 
     return this._element;
+  }
+  _toogleTrashButton() {
+    //Button trash active/inactive
+    if (this._idUser === this._myid) {
+      this._btnTrashActive();
+    } else {
+      this._btnTrashInactive();
+    }
   }
 }

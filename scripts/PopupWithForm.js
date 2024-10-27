@@ -7,6 +7,7 @@ export class PopupWithForm extends Popup {
     this._contentPopupFormCard = this._popupSelector.closest(
       ".popup-content-add-card"
     );
+    this._myIdUser = "d83fab7e242c9aeb842baac1";
   }
 
   close() {
@@ -18,7 +19,7 @@ export class PopupWithForm extends Popup {
     this._inputList.forEach((input) => {
       formValues[input.id] = input.value;
     });
-    console.log("Valores del formulario:", formValues);
+    formValues.iduser = this._myIdUser;
     return formValues;
   }
   setEventListeners() {

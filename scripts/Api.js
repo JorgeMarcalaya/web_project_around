@@ -90,6 +90,9 @@ export class Api {
         name: formDataCadrd.place,
         link: formDataCadrd.link,
         likes: formDataCadrd.likes,
+        owner: {
+          _id: formDataCadrd.iduser,
+        },
       }),
     })
       .then((res) => {
