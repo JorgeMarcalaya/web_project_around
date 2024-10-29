@@ -12,6 +12,18 @@ export class Card {
     this._likesArray = [];
     this._myid = "d83fab7e242c9aeb842baac1";
     this._buttonConfirmDelete = document.querySelector("#trashcard");
+    this._confirmDeleteHandler = (evt) => {
+      evt.preventDefault();
+      if (this._cardIdToDelete) {
+        this._deleteCard(this._cardIdToDelete);
+        PopupDelete.close();
+        this._cardIdToDelete = null; // Restablece la variable temporal
+      }
+    };
+    this._buttonConfirmDelete.addEventListener(
+      "click",
+      this._confirmDeleteHandler
+    );
   }
 
   _getTemplate() {
@@ -125,12 +137,8 @@ export class Card {
       .querySelector(".element__icon-delete")
       .addEventListener("click", () => {
         PopupDelete.open();
-        const cardIdDelete = this._idCard;
-        this._buttonConfirmDelete.addEventListener("click", (evt) => {
-          evt.preventDefault();
-          this._deleteCard(cardIdDelete);
-          PopupDelete.close();
-        });
+        this._cardIdToDelete = this._idCard;
+        console.log("ID de tarjeta a eliminar:", this._cardIdToDelete);
       });
 
     // Open popup image

@@ -114,18 +114,22 @@ function handleEditPhotoProfileFormSubmit(evt) {
 
 function handleCardFormSubmit(formData) {
   buttonNewCard.textContent = "Creando...";
-  const newCard = new Card(
-    {
-      name: formData.place,
-      link: formData.link,
-      iduser: formData.iduser,
-    },
-    ".template-cards",
-    handleCardClick
-  );
-  apiCards.cardAditional(formData);
-  const cardToAdd = newCard.generateCard();
-  cardArea.prepend(cardToAdd);
+  return apiCards.cardAditional(formData).then((newCardId) => {
+    formData.idcard = newCardId;
+
+    const newCard = new Card(
+      {
+        name: formData.place,
+        link: formData.link,
+        iduser: formData.iduser,
+        idcard: formData.idcard,
+      },
+      ".template-cards",
+      handleCardClick
+    );
+    const cardToAdd = newCard.generateCard();
+    cardArea.prepend(cardToAdd);
+  });
 }
 
 function popup__open_edit() {

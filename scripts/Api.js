@@ -83,7 +83,7 @@ export class Api {
       });
   }
   cardAditional(formDataCadrd) {
-    fetch(this._options.baseUrl, {
+    return fetch(this._options.baseUrl, {
       method: "POST",
       headers: this._options.headers,
       body: JSON.stringify({
@@ -101,12 +101,13 @@ export class Api {
         }
         return Promise.reject(`Error: ${res.status}`);
       })
-      .then(() => {
+      .then((result) => {
         console.log("Se agrego una tarjeta");
         this._textButtonCard.textContent = "Creado";
         setTimeout(() => {
           this._textButtonCard.textContent = "Crear";
         }, 2000);
+        return result._id;
       });
   }
   editPhotoProfile() {
